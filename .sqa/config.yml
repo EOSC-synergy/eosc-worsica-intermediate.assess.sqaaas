@@ -1,0 +1,62 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.4
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/WORSICA/eosc-worsica-intermediate:
+      branch: main
+      repo: https://github.com/WORSICA/eosc-worsica-intermediate
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/WORSICA/eosc-worsica-intermediate git:
+        commands:
+        - /usr/bin/env sh .sqa/script.droopy-white-whale.sh
+        container: qc.acc_seedy-cobalt-millipede
+  QC.Doc:
+    repos:
+      github.com/WORSICA/eosc-worsica-intermediate find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.tasty-magenta-opossum.sh
+        container: qc.doc_blurry-silver-shark
+      github.com/WORSICA/eosc-worsica-intermediate git:
+        commands:
+        - /usr/bin/env sh .sqa/script.woozy-chocolate-numbat.sh
+        container: qc.doc_randy-sepia-wasp
+      github.com/WORSICA/eosc-worsica-intermediate markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.flaky-thistle-capybara.sh
+        container: qc.doc_ugly-gamboge-heron
+  QC.Lic:
+    repos:
+      github.com/WORSICA/eosc-worsica-intermediate licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.geeky-grey-cassowary.sh
+        container: qc.lic_tacky-tan-liger
+  QC.Met:
+    repos:
+      github.com/WORSICA/eosc-worsica-intermediate cff-converter-python:
+        commands:
+        - /usr/bin/env sh .sqa/script.bluesy-platinum-vulture.sh
+        container: qc.met_leaky-purple-liger
+      github.com/WORSICA/eosc-worsica-intermediate validate_codemeta:
+        commands:
+        - /usr/bin/env sh .sqa/script.woozy-buff-fox.sh
+        container: qc.met_wimpy-lavender-sheep
+  QC.Sty:
+    repos:
+      github.com/WORSICA/eosc-worsica-intermediate jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.zippy-magenta-argentino.sh
+        container: qc.sty_freaky-copper-hummingbird
+  QC.Ver:
+    repos:
+      github.com/WORSICA/eosc-worsica-intermediate get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.clammy-vermilion-lynx.sh
+        container: qc.ver_squeaky-persimmon-spaniel
+timeout: 1800
