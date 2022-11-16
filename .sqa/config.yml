@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/1.7.4
+      branch: release/1.7.6
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/WORSICA/eosc-worsica-intermediate:
       branch: main
@@ -15,62 +15,62 @@ sqa_criteria:
     repos:
       github.com/WORSICA/eosc-worsica-intermediate git:
         commands:
-        - /usr/bin/env sh .sqa/script.goopy-pumpkin-urchin.sh
-        container: qc.acc_grumpy-charcoal-chameleon
+        - /usr/bin/env sh .sqa/script.queasy-vermilion-flamingo.sh
+        container: qc.acc_surly-cyan-mongrel
   QC.Doc:
     repos:
       github.com/WORSICA/eosc-worsica-intermediate find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.skinny-cobalt-ragdoll.sh
-        container: qc.doc_grumpy-linen-chimpanzee
+        - /usr/bin/env sh .sqa/script.ready-blue-fly.sh
+        container: qc.doc_wimpy-jade-turtle
       github.com/WORSICA/eosc-worsica-intermediate git:
         commands:
-        - /usr/bin/env sh .sqa/script.jumpy-maroon-lion.sh
-        container: qc.doc_shaggy-salmon-eleuth
+        - /usr/bin/env sh .sqa/script.wheezy-cinnabar-swan.sh
+        container: qc.doc_gummy-turquoise-walrus
       github.com/WORSICA/eosc-worsica-intermediate markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.hazy-lavender-wolf.sh
-        container: qc.doc_lumpy-magnolia-rhinoceros
+        - /usr/bin/env sh .sqa/script.snoopy-firebrick-dormouse.sh
+        container: qc.doc_lovely-aqua-mouse
   QC.Lic:
     repos:
       github.com/WORSICA/eosc-worsica-intermediate licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.snippy-denim-jaguar.sh
-        container: qc.lic_beady-heliotrope-frigatebird
+        - /usr/bin/env sh .sqa/script.slaphappy-plum-spoonbill.sh
+        container: qc.lic_skimpy-chartreuse-beagle
   QC.Met:
     repos:
       github.com/WORSICA/eosc-worsica-intermediate cff-converter-python:
         commands:
-        - /usr/bin/env sh .sqa/script.woozy-eggplant-hare.sh
-        container: qc.met_snippy-razzmatazz-pig
+        - /usr/bin/env sh .sqa/script.zippy-magnolia-zonkey.sh
+        container: qc.met_gummy-chartreuse-neanderthal
       github.com/WORSICA/eosc-worsica-intermediate validate_codemeta:
         commands:
-        - /usr/bin/env sh .sqa/script.jumpy-tan-earwig.sh
-        container: qc.met_skinny-brown-cuttlefish
+        - /usr/bin/env sh .sqa/script.shaky-cinnabar-deer.sh
+        container: qc.met_gummy-lemon-kingfisher
   QC.Sec:
     repos:
       github.com/WORSICA/eosc-worsica-intermediate bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.dorky-ruby-goose.sh
-        container: qc.sec_blurry-amaranth-hound
+        - /usr/bin/env sh .sqa/script.nerdy-flax-iguana.sh
+        container: qc.sec_lovely-olive-oyster
   QC.Sty:
     repos:
       github.com/WORSICA/eosc-worsica-intermediate flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.wimpy-copper-elephant.sh
-        container: qc.sty_wimpy-linen-rat
+        - /usr/bin/env sh .sqa/script.snappy-purple-clam.sh
+        container: qc.sty_fuzzy-bistre-beaver
       github.com/WORSICA/eosc-worsica-intermediate jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.snappy-sepia-sponge.sh
-        container: qc.sty_crappy-brass-molly
+        - /usr/bin/env sh .sqa/script.trippy-charcoal-snake.sh
+        container: qc.sty_scanty-red-tzu
       github.com/WORSICA/eosc-worsica-intermediate stylelint:
         commands:
-        - /usr/bin/env sh .sqa/script.homely-silver-ibis.sh
-        container: qc.sty_hilly-indigo-camel
+        - /usr/bin/env sh .sqa/script.goopy-tomato-beaver.sh
+        container: qc.sty_sunny-puce-newt
   QC.Ver:
     repos:
       github.com/WORSICA/eosc-worsica-intermediate get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.smelly-smalt-orangutan.sh
-        container: qc.ver_skimpy-cinnamon-spider
+        - /usr/bin/env sh .sqa/script.crappy-ivory-macaque.sh
+        container: qc.ver_fuzzy-tan-saola
 timeout: 1800
